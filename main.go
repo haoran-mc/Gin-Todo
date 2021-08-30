@@ -4,11 +4,12 @@ import (
 	"Gin-Todo/dao"
 	"Gin-Todo/models"
 	"Gin-Todo/routers"
+	"Gin-Todo/setting"
 )
 
 func main() {
 	// 创建数据库并连接数据库
-	err := dao.InitMySql()
+	err := dao.InitMySQL(setting.Conf.MySQLConfig)
 	if err != nil {
 		panic(err)
 	}
