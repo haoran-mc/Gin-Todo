@@ -14,7 +14,7 @@ func SetupRouter() *gin.Engine {
 	r.GET("/", controller.IndexHandler)
 
 	// v1
-	v1Group := r.Group("vi")
+	v1Group := r.Group("v1")
 	{
 		// 待办事项
 		// 添加
@@ -22,9 +22,9 @@ func SetupRouter() *gin.Engine {
 		// 查看所有的待办事项
 		v1Group.GET("/todo", controller.GetTodoList)
 		// 修改一个待办事项
-		v1Group.PUT("/todo:id", controller.UpdateTodo)
+		v1Group.PUT("/todo/:id", controller.UpdateTodo)
 		// 删除一个待办事项
-		v1Group.DELETE("/tode:id", controller.DeleteTodo)
+		v1Group.DELETE("/todo/:id", controller.DeleteTodo)
 	}
 	return r
 }

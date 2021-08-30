@@ -4,13 +4,12 @@ import (
 	"Gin-Todo/dao"
 	"Gin-Todo/models"
 	"Gin-Todo/routers"
-	"Gin-Todo/setting"
 )
 
 func main() {
-	// 创建数据库并连接数据库
-	err := dao.InitMySQL(setting.Conf.MySQLConfig)
-	if err != nil {
+	// 创建数据库 CREATE DATABASE Gin_Todo;
+	// 连接数据库
+	if err := dao.InitMySQL(); err != nil {
 		panic(err)
 	}
 	defer dao.Close()
@@ -18,5 +17,5 @@ func main() {
 	dao.DB.AutoMigrate(&models.Todo{})
 
 	r := routers.SetupRouter()
-	r.Run(":8001")
+	r.Run(":8002")
 }

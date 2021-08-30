@@ -1,10 +1,15 @@
 package controller
 
 import (
-	"Gin-Todo/models"
-	"github.com/gin-gonic/gin"
-	"net/http"
+"Gin-Todo/models"
+"github.com/gin-gonic/gin"
+"net/http"
 )
+
+/*
+  url     --> controller --> logic   --> model
+  请求来了 --> 控制器       --> 业务逻辑 --> 模型层的增删改查
+*/
 
 func IndexHandler(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.html", nil)
@@ -22,14 +27,14 @@ func CreateTodo(c *gin.Context) {
 	} else {
 		c.JSON(http.StatusOK, gin.H{
 			"code": 2000,
-			"msg": "success",
+			"msg":  "success",
 			"data": todo,
 		})
 	}
 }
 
 func GetTodoList(c *gin.Context) {
-	// 查询数据库中的所有数据
+	// 查询todo这个表里所有数据
 	todoList, err := models.GetAllTodo()
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{"error": err.Error()})
