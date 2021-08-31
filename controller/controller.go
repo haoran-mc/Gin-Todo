@@ -26,7 +26,6 @@ func CreateTodo(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"error": err.Error()})
 	} else {
 		c.JSON(http.StatusOK, gin.H{
-			"code": 2000,
 			"msg":  "success",
 			"data": todo,
 		})

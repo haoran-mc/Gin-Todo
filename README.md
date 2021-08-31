@@ -1,6 +1,6 @@
 # Todo List
 
-This project is used to learn about the GIN framework. It is my first project and it's learned form [Q1mi](https://github.com/Q1mi/bubble)
+This project is used to learn about the GIN framework. It is my first project and it's learned form [Q1mi](https://github.com/Q1mi/bubble).
 
 ## Quick Start
 
@@ -17,6 +17,8 @@ CREATE DATABASE Gin_Todo;
 ```
 
 3. Configure database connection information
+
+Please modify this file `./dao/mysql.go` for use on your own machine.
 
 ```go
 conf.db   = "Gin_Todo"     // database name
@@ -35,3 +37,7 @@ go run main.go
 5. Enjoy it!
 
 Open the url `http://127.0.0.1:8002/` in your browser
+
+## The Front-end
+
+The [front end](https://github.com/haoran-mc/Vue-Todo) is implemented using Vue + Element-UI.
