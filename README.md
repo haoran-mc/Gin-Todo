@@ -36,7 +36,7 @@ go run main.go
 
 5. Enjoy it!
 
-Open the url `http://127.0.0.1:8002/` in your browser
+Open the url `http://127.0.0.1:8002/` in your browser.
 
 ## The Front-end
 
